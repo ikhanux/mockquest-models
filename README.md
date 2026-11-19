@@ -1,15 +1,19 @@
 # MockQuest model files
 
-Model files the MockQuest Android app downloads to run its assistant, MockBuddy, on the phone. The app downloads them from here only if Google Play can't deliver them.
+Model files for the MockQuest Android app. Copies of the app installed from the Play Store get these from Google Play; only test copies installed directly (not from Play) download them from here.
 
 ## Files (release `v1`)
 
-| File | Size | SHA-256 |
+| File | Used for | Original source |
 |---|---|---|
-| `gemma3-1b-it-int4.task` | 554,661,243 bytes | `e3d981c01aeaaac69a84ffa0d4be13281b3176731063f1bea1c9fe6887bd9dee` |
+| `gemma3-1b-it-int4.task` | MockBuddy's AI | Gemma 3 1B (instruction-tuned, int4) by Google, MediaPipe format |
+| `asr-encoder.int8.onnx`, `asr-decoder.onnx`, `asr-joiner.int8.onnx`, `asr-tokens.txt` | English speech recognition | [csukuangfj/sherpa-onnx-streaming-zipformer-en-20M-2023-02-17](https://huggingface.co/csukuangfj/sherpa-onnx-streaming-zipformer-en-20M-2023-02-17) |
+| `kitten-nano-en-v0_2-fp16.tar.bz2` | Standard voices | [k2-fsa/sherpa-onnx tts-models](https://github.com/k2-fsa/sherpa-onnx/releases/tag/tts-models) |
+| `vits-piper-en_US-lessac-medium.tar.bz2` | Lessac voice | [k2-fsa/sherpa-onnx tts-models](https://github.com/k2-fsa/sherpa-onnx/releases/tag/tts-models) |
+| `vits-piper-en_GB-alba-medium.tar.bz2` | Alba voice | [k2-fsa/sherpa-onnx tts-models](https://github.com/k2-fsa/sherpa-onnx/releases/tag/tts-models) |
 
-## Licence
+All files are unmodified copies, each under its original licence.
 
-`gemma3-1b-it-int4.task` is Gemma 3 1B (instruction-tuned, int4), converted to run with MediaPipe. It is redistributed unmodified.
+## Gemma licence
 
 Gemma is provided under and subject to the Gemma Terms of Use found at https://ai.google.dev/gemma/terms. Use of Gemma is also subject to the Gemma Prohibited Use Policy at https://ai.google.dev/gemma/prohibited_use_policy. See [NOTICE](NOTICE).
